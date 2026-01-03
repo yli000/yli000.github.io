@@ -1,10 +1,10 @@
-// Colours
-$bodyColour: #46412A;
-$headingColour: darken($bodyColour, 5%);
-$linkColour: #5B5BFF;
-$hoverColour: darken($linkColour, 10%);
-$captionColour: lighten($headingColour, 40%);
-$white: #fff;
+// Colours - 黑白
+$bodyColour: #222222;        // 主文字颜色（深灰）
+$headingColour: #000000;     // 标题颜色（纯黑）
+$linkColour: #000000;        // 链接颜色（纯黑）
+$hoverColour: #666666;       // 悬停颜色（中灰）
+$captionColour: #888888;     // 标注文字（浅灰）
+$white: #ffffff;             // 纯白
 
-$backgroundColour: #ffefc8;
-$codeBackgroundColour: darken($backgroundColour, 5%);
+$backgroundColour: #ffffff;  // 背景色（纯白）
+$codeBackgroundColour: #f5f5f5; // 代码块背景（浅灰）
