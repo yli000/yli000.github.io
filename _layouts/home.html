@@ -6,7 +6,7 @@ layout: default
 
 <main class="main  container">
 
-	<div class="content  typeset">
+	<div class="content">
 
 		{% assign entries = site.posts | concat: site.notes | sort: "date" | reverse %}
 		{% include entry-list.html entries=entries empty="Nothing here yet." %}

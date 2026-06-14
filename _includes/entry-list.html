@@ -1,16 +1,16 @@
 {% assign entries = include.entries %}
 {% if entries and entries.size > 0 %}
-	<ul class="list  list--entries">
-		{% for entry in entries %}
-			<li class="entry">
-				<a class="entry__title" href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
-				<span class="entry__meta">
-					<span class="label  label--{{ entry.collection }}">{% if entry.collection == "posts" %}post{% else %}note{% endif %}</span>
-					<time class="entry__date" datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_string }}</time>
-				</span>
-			</li>
-		{% endfor %}
-	</ul>
+<ul class="list  list--posts">
+	{% for entry in entries %}
+	<li class="item  item--post">
+		<article class="article  article--post  typeset">
+			<h2><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h2>
+			<small class="small  post-meta"><time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date_to_string }}</time></small>
+			{{ entry.excerpt | markdownify | truncatewords: 60 }}
+		</article>
+	</li>
+	{% endfor %}
+</ul>
 {% else %}
-	<p class="entry__empty">{{ include.empty | default: "Nothing here yet." }}</p>
+<p class="entry__empty">{{ include.empty | default: "Nothing here yet." }}</p>
 {% endif %}

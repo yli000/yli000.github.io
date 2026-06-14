@@ -4,9 +4,9 @@ plugins:
 remote_theme: daviddarnes/garth
 
 # ── Site identity ───────────────────────────────────────────────
-# This shows in the top-left of every page, the browser tab, and the
-# footer. Change it to whatever you want your blog to be called.
-title: Yue Li
+# Shown in the browser tab and the footer copyright. The top-left
+# corner of the header is intentionally left blank.
+title: yli
 description: Notes and posts.
 lang: en
 

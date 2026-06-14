@@ -178,89 +178,74 @@ video {
 }
 
 
-// Entry lists (home / notes / posts)
-.list--entries {
-  list-style: none;
-  margin-left: 0;
+// ── Customisations ──────────────────────────────────────────────
+
+// Post / note lists (home / notes / posts): title / date / excerpt
+.list--posts .item--post {
+  margin-bottom: 1.6rem;
 }
 
-.entry {
-  margin-left: 0;
-  padding: .5rem 0;
-  border-bottom: 1px solid lighten($captionColour, 40%);
-  @include breakpoint(break-1) {
-    @include flexbox;
-    @include justify-content(space-between);
-    @include align-items(baseline);
-  }
-}
-
-.entry__title {
-  color: $linkColour;
-  text-decoration: none;
-  background-image: none; // cancel sassline's in-text underline
+.typeset .list--posts h2 a {
+  // keep list titles clean (no sassline gradient underline)
+  background-image: none;
   text-shadow: none;
-  &:hover,
-  &:focus {
-    color: $hoverColour;
-    background-image: none;
-  }
-}
-
-.entry__meta {
-  color: $captionColour;
-  font-size: .8rem;
-  white-space: nowrap;
-}
-
-.entry__date {
-  margin-left: .5rem;
 }
 
 .entry__empty {
   color: $captionColour;
 }
 
-// Small type labels: note / post
-.label--notes,
-.label--posts {
-  font-size: .7rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: $captionColour;
+// Nav dropdown: hover (or focus) "blog" to reveal notes / posts
+.item--has-sub {
+  position: relative;
 }
 
-// "Back home" star at the foot of each article
-.backlink {
-  margin-top: 3rem;
-  text-align: center;
-}
+.subnav {
+  list-style: none;
+  margin: 0;
+  padding: .3rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 6rem;
+  background: $backgroundColour;
+  border: 1px solid darken($backgroundColour, 10%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-.25rem);
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 20;
 
-.star {
-  display: inline-block;
-  font-size: 1.7rem;
-  line-height: 1;
-  color: #c9c9c9;          // pale; swap for #7E9CE0 to echo the favicon balloon
-  text-decoration: none;
-  background-image: none;  // cancel sassline's in-text underline
-  text-shadow: none;
-  animation: star-bounce 2.4s ease-in-out infinite;
-  transition: color .2s ease;
-  &:hover,
-  &:focus {
-    color: $captionColour;
-    background-image: none;
-    animation-duration: .6s; // hop faster on hover
+  li {
+    display: block;
+    margin: 0;
+  }
+  a {
+    display: block;
+    padding: .15rem .8rem;
+    white-space: nowrap;
   }
 }
 
-@keyframes star-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-30%); }
+.item--has-sub:hover .subnav,
+.item--has-sub:focus-within .subnav {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .star {
-    animation: none;
+// Simple, pale "back" link at the foot of an article
+.typeset .backlink {
+  margin-top: 3rem;
+
+  a {
+    color: $captionColour;
+    font-size: .9rem;
+    background-image: none; // no sassline gradient underline
+    text-shadow: none;
+    &:hover,
+    &:focus {
+      color: $hoverColour;
+    }
   }
 }

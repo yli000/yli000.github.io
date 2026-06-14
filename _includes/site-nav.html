@@ -1,7 +1,13 @@
+{% assign u = page.url %}
 <nav class="nav">
 	<ul class="list  list--nav">
-		<li class="item  item--nav{% if page.url contains "/notes" %}  item--current{% endif %}"><a href="{{ "/notes/" | relative_url }}">Notes</a></li>
-		<li class="item  item--nav{% if page.url contains "/posts" %}  item--current{% endif %}"><a href="{{ "/posts/" | relative_url }}">Posts</a></li>
-		<li class="item  item--nav{% if page.url contains "/about" %}  item--current{% endif %}"><a href="{{ "/about/" | relative_url }}">About</a></li>
+		<li class="item  item--nav  item--has-sub{% if u == '/' or u contains '/notes' or u contains '/posts' %}  item--current{% endif %}">
+			<a href="{{ '/' | relative_url }}">blog</a>
+			<ul class="subnav">
+				<li><a href="{{ '/notes/' | relative_url }}">notes</a></li>
+				<li><a href="{{ '/posts/' | relative_url }}">posts</a></li>
+			</ul>
+		</li>
+		<li class="item  item--nav{% if u contains '/about' %}  item--current{% endif %}"><a href="{{ '/about/' | relative_url }}">about</a></li>
 	</ul>
 </nav>
