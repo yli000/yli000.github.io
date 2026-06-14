@@ -3,38 +3,10 @@ plugins:
 
 remote_theme: daviddarnes/garth
 
-# ── Site identity ───────────────────────────────────────────────
-# Shown in the browser tab and the footer copyright. The top-left
-# corner of the header is intentionally left blank.
-title: yli
-description: Notes and posts.
-lang: en
+logo: /assets/images/logo.svg
 
-# Full favicon set lives at the site root (see _layouts/default.html).
-favicon: /favicon.ico
-
-# ── Two kinds of writing ────────────────────────────────────────
-# notes : quick jottings after reading something  ->  _notes/*.md
-# posts : longer summaries of a topic             ->  _posts/*.md
-collections:
-  notes:
-    output: true
-    permalink: /notes/:title/
-  posts:
-    output: true
-    permalink: /posts/:title/
-
-defaults:
-  - scope: { path: "", type: notes }
-    values: { layout: post }
-  - scope: { path: "", type: posts }
-    values: { layout: post }
-  - scope: { path: "", type: pages }
-    values: { layout: page }
-
-# Keep these out of the built site
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+# collections:
+#   posts:
+#     title: Blog
+#     output: true
+#     description: ""

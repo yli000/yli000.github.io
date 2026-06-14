@@ -1,4 +1,4 @@
 ---
 layout: home
-title: false
+title: Blog
 ---

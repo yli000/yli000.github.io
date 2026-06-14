@@ -39,16 +39,14 @@ body {
   background: $backgroundColour; // 改色
 }
 
-.sitetitle {
+.logo {
   display: inline-block;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1;
-  color: $headingColour;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: $hoverColour;
+  line-height: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  img {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -174,78 +172,5 @@ video {
   pre {
     white-space: pre;
     overflow-x: scroll;
-  }
-}
-
-
-// ── Customisations ──────────────────────────────────────────────
-
-// Post / note lists (home / notes / posts): title / date / excerpt
-.list--posts .item--post {
-  margin-bottom: 1.6rem;
-}
-
-.typeset .list--posts h2 a {
-  // keep list titles clean (no sassline gradient underline)
-  background-image: none;
-  text-shadow: none;
-}
-
-.entry__empty {
-  color: $captionColour;
-}
-
-// Nav dropdown: hover (or focus) "blog" to reveal notes / posts
-.item--has-sub {
-  position: relative;
-}
-
-.subnav {
-  list-style: none;
-  margin: 0;
-  padding: .3rem 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 6rem;
-  background: $backgroundColour;
-  border: 1px solid darken($backgroundColour, 10%);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-.25rem);
-  transition: opacity .15s ease, transform .15s ease;
-  z-index: 20;
-
-  li {
-    display: block;
-    margin: 0;
-  }
-  a {
-    display: block;
-    padding: .15rem .8rem;
-    white-space: nowrap;
-  }
-}
-
-.item--has-sub:hover .subnav,
-.item--has-sub:focus-within .subnav {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-// Simple, pale "back" link at the foot of an article
-.typeset .backlink {
-  margin-top: 3rem;
-
-  a {
-    color: $captionColour;
-    font-size: .9rem;
-    background-image: none; // no sassline gradient underline
-    text-shadow: none;
-    &:hover,
-    &:focus {
-      color: $hoverColour;
-    }
   }
 }
