@@ -1,0 +1,150 @@
+---
+layout: none
+permalink: /preview/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>样式预览</title>
+<link rel="stylesheet" href="/assets/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700|Neuton:400,700" rel="stylesheet">
+<style>
+  body { padding: 0 0 4rem; }
+  .pv { width: 90%; max-width: 900px; margin: 0 auto; }
+  .pv h1 { margin: 1.6rem 0 .2rem; }
+  .pv h2.sec { margin: 2.6rem 0 .3rem; font-size: 1.5rem; border-top: 2px solid #111; padding-top: .8rem; }
+  .pv .hint { color: #888; font-size: .85rem; margin: .2rem 0 1.1rem; line-height: 1.5; }
+  .frame { border: 1px solid #e6e6e6; border-radius: 6px; margin: 0 0 1.2rem; overflow: hidden; }
+  .frame .cap { background: #fafafa; border-bottom: 1px solid #eee; padding: .45rem .8rem; font-size: .82rem; color: #555; }
+  .frame .body { padding: .3rem 1rem 1rem; }
+  .frame .header { background: #fff; }
+  .frame .header .container { width: 100%; }
+  .logo-preview { display: inline-block; line-height: 0; }
+  .logo-preview img { height: 30px; width: auto; }
+
+  /* List A — 原来那种:大标题 / 日期 / 预览 */
+  .la ul { list-style: none; margin: 0; padding: 0; }
+  .la li { margin: 0 0 1.5rem; }
+  .la .t { font-size: 1.4rem; font-weight: 700; color: #000; text-decoration: none; }
+  .la .t:hover { color: #666; }
+  .la .d { display: block; color: #888; font-size: .8rem; margin: .1rem 0 .35rem; }
+  .la .x { margin: 0; color: #333; }
+
+  /* List B — 标题 + 右对齐日期(无预览) */
+  .lb ul { list-style: none; margin: 0; padding: 0; }
+  .lb li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid #f0f0f0; }
+  .lb .t { color: #000; text-decoration: none; }
+  .lb .t:hover { color: #666; }
+  .lb .d { color: #999; font-size: .8rem; white-space: nowrap; }
+
+  /* List C — 标题 / 小字日期 / 预览(紧凑) */
+  .lc ul { list-style: none; margin: 0; padding: 0; }
+  .lc li { margin: 0 0 1.1rem; }
+  .lc .t { font-size: 1.1rem; color: #000; text-decoration: none; }
+  .lc .t:hover { color: #666; }
+  .lc .d { display: block; color: #999; font-size: .75rem; margin: .05rem 0 .25rem; }
+  .lc .x { margin: 0; color: #444; font-size: .92rem; }
+
+  /* List D — 小字日期(上) + 标题 + 预览 */
+  .ld ul { list-style: none; margin: 0; padding: 0; }
+  .ld li { margin: 0 0 1.3rem; }
+  .ld .d { display: block; color: #999; font-size: .75rem; letter-spacing: .03em; }
+  .ld .t { font-size: 1.2rem; font-weight: 700; color: #000; text-decoration: none; }
+  .ld .t:hover { color: #666; }
+  .ld .x { margin: .15rem 0 0; color: #444; }
+</style>
+</head>
+<body>
+<div class="pv">
+  <h1>样式预览</h1>
+  <p class="hint">临时预览页（<code>/preview/</code>），只给你挑样式用。下面每一块都是<strong>真实渲染</strong>（用的就是网站的字体和样式）。挑好后告诉我编号，我会正式改到全站并删掉这一页 —— 主站现在没动。</p>
+
+  <h2 class="sec">一、左上角（抬头）</h2>
+  <p class="hint">blog / about 都保持在右边原位，只看左上角放什么。</p>
+
+  <div class="frame">
+    <div class="cap">① 纯空白 —— 左上角什么都不放，导航留在右边（你目前倾向这个）</div>
+    <div class="body">
+      <header class="header"><div class="container">
+        <span class="sitetitle" aria-hidden="true"></span>
+        <nav class="nav"><ul class="list list--nav">
+          <li class="item item--nav"><a href="#">blog</a></li>
+          <li class="item item--nav"><a href="#">about</a></li>
+        </ul></nav>
+      </div></header>
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="cap">② 小写 yli —— 点击回首页</div>
+    <div class="body">
+      <header class="header"><div class="container">
+        <a class="sitetitle" href="#">yli</a>
+        <nav class="nav"><ul class="list list--nav">
+          <li class="item item--nav"><a href="#">blog</a></li>
+          <li class="item item--nav"><a href="#">about</a></li>
+        </ul></nav>
+      </div></header>
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="cap">③ 小图标 —— 示例用了你的气球 favicon（会把图片带回抬头）</div>
+    <div class="body">
+      <header class="header"><div class="container">
+        <a class="logo-preview" href="#"><img src="/favicon.svg" alt="logo"></a>
+        <nav class="nav"><ul class="list list--nav">
+          <li class="item item--nav"><a href="#">blog</a></li>
+          <li class="item item--nav"><a href="#">about</a></li>
+        </ul></nav>
+      </div></header>
+    </div>
+  </div>
+
+  <h2 class="sec">二、列表样式</h2>
+  <p class="hint">都去掉了贴在标题后面的那个 note 小标签。示例条目是我随便编的。</p>
+
+  <div class="frame">
+    <div class="cap">A. 原来那种 —— 大标题 / 日期 / 预览</div>
+    <div class="body la"><ul>
+      <li><a class="t" href="#">怎样读论文</a><span class="d">10 Jun 2026</span><p class="x">先扫标题和摘要，再看图表，最后再决定要不要细读正文……</p></li>
+      <li><a class="t" href="#">RL 里的 KL 散度</a><span class="d">28 May 2026</span><p class="x">记一下为什么 PPO 要约束新旧策略之间的距离……</p></li>
+      <li><a class="t" href="#">my first note</a><span class="d">16 Nov 2025</span><p class="x">yay</p></li>
+    </ul></div>
+  </div>
+
+  <div class="frame">
+    <div class="cap">B. 极简 —— 标题在左、日期在右，一行一条，无预览</div>
+    <div class="body lb"><ul>
+      <li><a class="t" href="#">怎样读论文</a><span class="d">10 Jun 2026</span></li>
+      <li><a class="t" href="#">RL 里的 KL 散度</a><span class="d">28 May 2026</span></li>
+      <li><a class="t" href="#">my first note</a><span class="d">16 Nov 2025</span></li>
+    </ul></div>
+  </div>
+
+  <div class="frame">
+    <div class="cap">C. 紧凑 —— 中号标题 / 小字日期 / 预览</div>
+    <div class="body lc"><ul>
+      <li><a class="t" href="#">怎样读论文</a><span class="d">10 Jun 2026</span><p class="x">先扫标题和摘要，再看图表，最后再决定要不要细读正文……</p></li>
+      <li><a class="t" href="#">RL 里的 KL 散度</a><span class="d">28 May 2026</span><p class="x">记一下为什么 PPO 要约束新旧策略之间的距离……</p></li>
+      <li><a class="t" href="#">my first note</a><span class="d">16 Nov 2025</span><p class="x">yay</p></li>
+    </ul></div>
+  </div>
+
+  <div class="frame">
+    <div class="cap">D. 日期在上 —— 小字日期 / 标题 / 预览</div>
+    <div class="body ld"><ul>
+      <li><span class="d">10 Jun 2026</span><a class="t" href="#">怎样读论文</a><p class="x">先扫标题和摘要，再看图表，最后再决定要不要细读正文……</p></li>
+      <li><span class="d">28 May 2026</span><a class="t" href="#">RL 里的 KL 散度</a><p class="x">记一下为什么 PPO 要约束新旧策略之间的距离……</p></li>
+      <li><span class="d">16 Nov 2025</span><a class="t" href="#">my first note</a><p class="x">yay</p></li>
+    </ul></div>
+  </div>
+
+  <h2 class="sec">三、还没定的</h2>
+  <p class="hint">右上角 blog 的悬浮分类（notes / posts）、以及"返回首页"的做法，等你定了上面两项我们再接着弄。</p>
+</div>
+</body>
+</html>
