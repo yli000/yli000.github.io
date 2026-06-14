@@ -39,14 +39,16 @@ body {
   background: $backgroundColour; // 改色
 }
 
-.logo {
+.sitetitle {
   display: inline-block;
-  line-height: 0;
-  border-radius: 100%;
-  overflow: hidden;
-  img {
-    width: 4rem;
-    height: 4rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: $headingColour;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $hoverColour;
   }
 }
 
@@ -172,5 +174,93 @@ video {
   pre {
     white-space: pre;
     overflow-x: scroll;
+  }
+}
+
+
+// Entry lists (home / notes / posts)
+.list--entries {
+  list-style: none;
+  margin-left: 0;
+}
+
+.entry {
+  margin-left: 0;
+  padding: .5rem 0;
+  border-bottom: 1px solid lighten($captionColour, 40%);
+  @include breakpoint(break-1) {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(baseline);
+  }
+}
+
+.entry__title {
+  color: $linkColour;
+  text-decoration: none;
+  background-image: none; // cancel sassline's in-text underline
+  text-shadow: none;
+  &:hover,
+  &:focus {
+    color: $hoverColour;
+    background-image: none;
+  }
+}
+
+.entry__meta {
+  color: $captionColour;
+  font-size: .8rem;
+  white-space: nowrap;
+}
+
+.entry__date {
+  margin-left: .5rem;
+}
+
+.entry__empty {
+  color: $captionColour;
+}
+
+// Small type labels: note / post
+.label--notes,
+.label--posts {
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: $captionColour;
+}
+
+// "Back home" star at the foot of each article
+.backlink {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.star {
+  display: inline-block;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: #c9c9c9;          // pale; swap for #7E9CE0 to echo the favicon balloon
+  text-decoration: none;
+  background-image: none;  // cancel sassline's in-text underline
+  text-shadow: none;
+  animation: star-bounce 2.4s ease-in-out infinite;
+  transition: color .2s ease;
+  &:hover,
+  &:focus {
+    color: $captionColour;
+    background-image: none;
+    animation-duration: .6s; // hop faster on hover
+  }
+}
+
+@keyframes star-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-30%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    animation: none;
   }
 }

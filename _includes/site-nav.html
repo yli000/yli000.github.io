@@ -1,0 +1,7 @@
+<nav class="nav">
+	<ul class="list  list--nav">
+		<li class="item  item--nav{% if page.url contains "/notes" %}  item--current{% endif %}"><a href="{{ "/notes/" | relative_url }}">Notes</a></li>
+		<li class="item  item--nav{% if page.url contains "/posts" %}  item--current{% endif %}"><a href="{{ "/posts/" | relative_url }}">Posts</a></li>
+		<li class="item  item--nav{% if page.url contains "/about" %}  item--current{% endif %}"><a href="{{ "/about/" | relative_url }}">About</a></li>
+	</ul>
+</nav>

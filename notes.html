@@ -1,0 +1,8 @@
+---
+layout: page
+title: Notes
+permalink: /notes/
+---
+
+{% assign entries = site.notes | sort: "date" | reverse %}
+{% include entry-list.html entries=entries empty="No notes yet." %}
