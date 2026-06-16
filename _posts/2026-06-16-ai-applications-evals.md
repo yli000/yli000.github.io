@@ -8,7 +8,7 @@ date: 2026-06-16
 
 [Evals faq](https://hamel.dev/blog/posts/evals-faq/)
 
-[Your AI product needs evals](https://hamel.dev/blog/posts/evals/index.htmlhttps://hamel.dev/blog/posts/evals/index.html)
+[Your AI product needs evals](https://hamel.dev/blog/posts/evals/index.html)
 
 [Using LLM-as-a-judge for evaluation: a complete guide](https://hamel.dev/blog/posts/llm-judge/index.html)
 
