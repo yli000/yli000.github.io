@@ -2,7 +2,7 @@
 layout: post
 title: AI应用评测
 slug: ai-applications-evals
-date: 2026-06-17
+date: 2026-06-16
 ---
 这篇笔记基于下列资料：
 
