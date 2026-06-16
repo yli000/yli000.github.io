@@ -27,9 +27,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
     sort:
       - { field: date, direction: descending }
-    # 关掉右侧预览面板（它会把所有字段堆在正文上面，容易误以为进了文章）
-    editor:
-      preview: false
     fields:
       - { label: "布局", name: "layout", widget: "hidden", default: "post" }
       - { label: "标题", name: "title", widget: "string" }

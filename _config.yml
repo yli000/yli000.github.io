@@ -5,10 +5,8 @@ remote_theme: daviddarnes/garth
 
 logo: /assets/images/logo.svg
 
-# 始终发布文章，不因日期“在未来”而被隐藏（GitHub 用 UTC 构建，本地 UTC+8 容易踩这个坑）
+# 始终发布文章，不因日期“在未来”被隐藏（GitHub 按 UTC 构建，比本地 UTC+8 慢半天）
 future: true
-# 用本地时区解释/显示文章日期
-timezone: Asia/Shanghai
 
 # collections:
 #   posts:
