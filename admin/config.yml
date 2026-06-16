@@ -27,9 +27,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
     sort:
       - { field: date, direction: descending }
+    # 关掉右侧预览面板（它会把所有字段堆在正文上面，容易误以为进了文章）
+    editor:
+      preview: false
     fields:
       - { label: "布局", name: "layout", widget: "hidden", default: "post" }
       - { label: "标题", name: "title", widget: "string" }
-      - { label: "网址名（英文小写，连字符，如 my-first-note）", name: "slug", widget: "string" }
+      - { label: "网址名", name: "slug", widget: "string", hint: "英文小写、用连字符，如 my-first-note；决定文件名和网址" }
       - { label: "日期", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
       - { label: "正文", name: "body", widget: "markdown" }
