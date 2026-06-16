@@ -174,3 +174,55 @@ video {
     overflow-x: scroll;
   }
 }
+
+
+// Collapsible blocks — <details>/<summary>, Obsidian 风格折叠
+.typeset {
+  details {
+    margin: 1.6rem 0;
+    padding: 0 1.1rem;
+    border: 1px solid darken($backgroundColour, 12%);
+    border-radius: 3px;
+    background: $codeBackgroundColour;
+  }
+
+  summary {
+    position: relative;
+    padding: .7rem 0 .7rem 1.4rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: $headingColour;
+    list-style: none;                              // Firefox: 隐藏默认三角
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &::-webkit-details-marker { display: none; }   // Chrome/Safari: 隐藏默认三角
+
+    &::before {                                     // 自定义三角标记
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border: .3rem solid transparent;
+      border-left-color: $captionColour;
+      border-right-width: 0;
+      transition: transform .15s ease;
+    }
+
+    &:hover { color: $hoverColour; }
+  }
+
+  details[open] > summary {
+    margin-bottom: .8rem;
+    border-bottom: 1px solid darken($backgroundColour, 12%);
+  }
+
+  details[open] > summary::before {
+    transform: translateY(-50%) rotate(90deg);     // 展开时三角朝下
+  }
+
+  details[open] > *:last-child {
+    margin-bottom: .9rem;
+  }
+}
