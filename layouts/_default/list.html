@@ -1,0 +1,62 @@
+{{ define "main" }}
+<content>
+  <style>
+    /* 极简搜索框，参考 Herman 的 bear blog（近原生、细、小） */
+    #searchbox {
+      display: block;
+      width: 14em;
+      max-width: 100%;
+      margin: 0 0 1.8em;
+      padding: 4px 8px;
+      font-family: var(--font-secondary);
+      font-size: 0.8em;
+      line-height: 1.4;
+      color: var(--text-color);
+      background: var(--background-color);
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    #searchbox::placeholder { color: #aaa; }
+    #searchbox:focus { outline: none; border-color: #999; }
+  </style>
+  <input
+    type="text"
+    id="searchbox"
+    placeholder="搜索…"
+    aria-label="搜索文章"
+    autocomplete="off"
+  />
+  <ul class="blog-posts">
+    {{ range .Pages }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ else }}
+    <li>No posts yet</li>
+    {{ end }}
+  </ul>
+</content>
+<script>
+  (function () {
+    var box = document.getElementById("searchbox");
+    if (!box) return;
+    var items = Array.prototype.slice.call(
+      document.querySelectorAll("ul.blog-posts li")
+    );
+    box.addEventListener("input", function () {
+      var q = box.value.trim().toLowerCase();
+      items.forEach(function (li) {
+        li.style.display =
+          li.textContent.toLowerCase().indexOf(q) !== -1 ? "" : "none";
+      });
+    });
+  })();
+</script>
+{{ end }}

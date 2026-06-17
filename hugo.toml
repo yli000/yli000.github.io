@@ -1,0 +1,34 @@
+# Hugo + Bear 主题配置
+# 本地预览：hugo server  →  http://localhost:1313/
+# 线上地址（迁移后）：https://yli000.github.io/
+
+baseURL = "https://yli000.github.io/"
+languageCode = "zh-CN"
+title = "yli's blog"                 # 顶部大标题 & 浏览器标签
+theme = "hugo-bearblog"
+
+# 生成 Bearblog 风格的干净 URL，不生成 /tags/ 这类分类页
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+
+[params]
+  dateFormat = "02 Jan, 2006"        # 列表日期格式，如 09 Jun, 2026
+  hideMadeWithLine = true            # 去掉每页底部的 “Made with Hugo Bear”
+
+# 顶部导航：Home、Blog（暂不要 About）
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+
+# 代码高亮，贴合 Bear 的极简观感
+[markup]
+  [markup.highlight]
+    style = "friendly"
+    lineNos = false
+    codeFences = true

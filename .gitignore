@@ -1,6 +1,4 @@
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
-.bundle/
-vendor/
+# Hugo 构建产物
+/public/
+/resources/_gen/
+.hugo_build.lock
