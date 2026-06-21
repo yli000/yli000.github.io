@@ -1,29 +1,10 @@
 {{ define "main" }}
 <content>
-  <style>
-    /* 极简搜索框，参考 Herman 的 bear blog（近原生、细、小） */
-    #searchbox {
-      display: block;
-      width: 14em;
-      max-width: 100%;
-      margin: 0 0 1.8em;
-      padding: 4px 8px;
-      font-family: var(--font-secondary);
-      font-size: 0.8em;
-      line-height: 1.4;
-      color: var(--text-color);
-      background: var(--background-color);
-      border: 1px solid #ddd;
-      border-radius: 3px;
-    }
-    #searchbox::placeholder { color: #aaa; }
-    #searchbox:focus { outline: none; border-color: #999; }
-  </style>
   <input
     type="text"
     id="searchbox"
-    placeholder="搜索…"
-    aria-label="搜索文章"
+    placeholder="Search..."
+    aria-label="Search posts"
     autocomplete="off"
   />
   <ul class="blog-posts">

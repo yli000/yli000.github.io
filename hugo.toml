@@ -13,7 +13,9 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 [params]
   dateFormat = "02 Jan, 2006"        # 列表日期格式，如 09 Jun, 2026
-  hideMadeWithLine = true            # 去掉每页底部的 “Made with Hugo Bear”
+  # 底部 “Made with Hugo ʕ•ᴥ•ʔ Bear” 由主题 partials/footer.html 输出，
+  # 受 hideMadeWithLine 控制；设为 false（或删掉本行）即显示在每页底部。
+  hideMadeWithLine = false
 
 # 顶部导航：Home、Blog（暂不要 About）
 [menu]
